@@ -1,191 +1,90 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+# Instagram Public Profile Data Scraper  
+### Exact Followers Count & Public Instagram Data
 
-<title>Instagram Public Profile Data Scraper | Exact Followers Count</title>
+A Python-based web scraping tool designed to retrieve **exact Instagram followers count**
+and other **public profile data** without login, authentication, or cookies.
 
-<meta name="description" content="Python web scraping tool to fetch exact Instagram followers count and public profile data without login, cookies, or authentication.">
-<meta name="keywords" content="instagram followers count, exact followers instagram, instagram public data, instagram analytics, web scraping python, instagram scraper, social media analytics">
+Instagram displays follower numbers in an abbreviated format such as **10K** or **1M**.  
+This tool retrieves the **real numeric value** behind those numbers.
 
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        line-height: 1.8;
-        max-width: 900px;
-        margin: auto;
-        padding: 24px;
-        background-color: #f9f9f9;
-        color: #333;
-    }
-    h1, h2, h3 {
-        color: #2c3e50;
-        margin-top: 30px;
-    }
-    p {
-        margin-bottom: 16px;
-    }
-    ul {
-        margin-bottom: 20px;
-    }
-    li {
-        margin-bottom: 8px;
-    }
-    code {
-        background: #ecf0f1;
-        padding: 3px 6px;
-        border-radius: 4px;
-    }
-    pre {
-        background: #ecf0f1;
-        padding: 14px;
-        border-radius: 6px;
-        overflow-x: auto;
-    }
-    .note {
-        background: #eef6ff;
-        padding: 14px;
-        border-left: 4px solid #2980b9;
-        margin: 24px 0;
-    }
-</style>
-</head>
+**Example:**
+- Instagram display: `10K followers`
+- Actual value returned by this tool: `10,436 followers`
 
-<body>
+---
 
-<h1>Instagram Public Profile Data Scraper</h1>
+## Project Overview
 
-<p>
-This project is a Python-based web scraping tool designed to retrieve
-public Instagram profile data with a strong focus on accuracy and transparency.
-Its main goal is to extract the exact follower count that Instagram does not
-display clearly in its user interface.
-</p>
+Instagram limits the visibility of precise metrics by rounding large numbers.
+This project demonstrates how **public Instagram profile data**
+can be accessed programmatically to extract **accurate numerical values**.
 
-<div class="note">
-<p>
-Instagram shows follower numbers in an abbreviated format.
-For example, an account may appear as having 10K followers.
-This tool retrieves the real numeric value behind that number.
-</p>
+The main focus of this project is **data accuracy and transparency**,
+making it a practical example of responsible **Python web scraping**
+using public endpoints.
 
-<p>
-Instagram display example: 10K followers<br>
-Actual data returned by this tool: 10,436 followers
-</p>
-</div>
+---
 
-<h2>Project Overview</h2>
+## Key Features
 
-<p>
-Instagram limits the visibility of exact numbers by rounding large values.
-This project demonstrates how public Instagram data can be accessed
-programmatically to retrieve precise numerical values.
-It is intended as a practical example of web scraping using Python
-and public endpoints.
-</p>
+- Retrieves the **exact Instagram followers count** (no rounding)
+- Fetches **public Instagram profile data only**
+- Works **without login or authentication**
+- No Instagram account required
+- No cookies are stored or reused
+- Simple input: username or public profile URL
 
-<h2>Key Features</h2>
+---
 
-<ul>
-    <li>Retrieves the exact Instagram followers count without rounding</li>
-    <li>Fetches public Instagram profile data only</li>
-    <li>Works without login or authentication</li>
-    <li>No Instagram account required</li>
-    <li>No cookies are stored or reused</li>
-    <li>Simple usage through username or public profile URL</li>
-</ul>
+## Public Data Collected
 
-<h2>Public Data Collected</h2>
+- Exact followers count
+- Total number of posts
+- Total reels or clips count (if available)
+- Account privacy status
+- Verification status
+- Account type
+- Profile biography and full name
+- Profile picture URL
 
-<ul>
-    <li>Exact followers count</li>
-    <li>Total number of posts</li>
-    <li>Total reels or clips count if available</li>
-    <li>Account privacy status</li>
-    <li>Verification status</li>
-    <li>Account type</li>
-    <li>Profile biography and full name</li>
-    <li>Profile picture URL</li>
-</ul>
+---
 
-<h2>Authentication and Privacy</h2>
+## Authentication & Privacy
 
-<p>
-This tool operates without logging in to Instagram.
-It does not require a username, password, session, or cookies.
-</p>
+This tool operates **without logging in** to Instagram.
 
-<p>
-The user only needs to provide one of the following:
-</p>
+It does **not** require:
+- Username or password
+- Session tokens
+- Stored or reused cookies
 
-<ul>
-    <li>An Instagram username</li>
-    <li>A public Instagram profile link</li>
-</ul>
+The user only needs to provide:
+- An Instagram username  
+**or**
+- A public Instagram profile URL
 
-<p>
-All retrieved data is publicly available and accessible without authentication.
-</p>
+All retrieved data is **publicly accessible** without authentication.
 
-<h2>How It Works</h2>
+---
 
-<p>
-The script uses Python and standard HTTP requests to process
-publicly available information exposed on Instagram public profile pages.
-It extracts raw numeric values that are not fully visible through
-the Instagram interface.
-</p>
+## How It Works
 
-<p>
-This makes the project useful for understanding how social media platforms
-handle public data and how web scraping techniques can be applied responsibly.
-</p>
+The script uses Python and standard HTTP requests to interact with
+Instagram public GraphQL endpoints.
 
-<h2>Installation</h2>
+It extracts **raw numeric values** that are not fully visible
+through Instagram’s user interface.
 
-<pre><code>git clone https://github.com/walieed122/instagram-public-metrics.git
-cd instagram-public-metrics
+This makes the project useful for:
+- Understanding how social media platforms expose public data
+- Learning real-world web scraping techniques
+- Analyzing public Instagram metrics accurately
+
+---
+
+## Installation
+
+```bash
+git clone https://github.com/walieed122/Instagram-Follower-Count-Public-Profile-Data-Scraper.git
+cd Instagram-Follower-Count-Public-Profile-Data-Scraper
 pip install -r requirements.txt
-</code></pre>
-
-<h2>Usage</h2>
-
-<pre><code>python main.py
-</code></pre>
-
-<p>
-After running the script, enter an Instagram username or a public profile URL.
-The script will print the extracted public profile data in a clear format.
-</p>
-
-<h2>Project Structure</h2>
-
-<pre><code>main.py
-requirements.txt
-README.md
-DISCLAIMER.md
-</code></pre>
-
-<h2>Use Cases</h2>
-
-<ul>
-    <li>Learning Python web scraping</li>
-    <li>Instagram follower count analysis</li>
-    <li>Comparing public Instagram accounts</li>
-    <li>Educational and research projects</li>
-    <li>Understanding public social media data</li>
-</ul>
-
-<h2>Disclaimer</h2>
-
-<p>
-This project accesses publicly available Instagram data only.
-It is intended for educational and analytical purposes.
-Please review the DISCLAIMER file before using this tool.
-</p>
-
-</body>
-</html>
